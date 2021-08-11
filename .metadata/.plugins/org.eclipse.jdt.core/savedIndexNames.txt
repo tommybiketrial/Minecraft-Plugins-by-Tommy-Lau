@@ -1,5 +1,0 @@
-INDEX VERSION 1.131+C:\Tools\Eclipse Workspace\Minecraft-Plugins-by-Tommy-Lau\.metadata\.plugins\org.eclipse.jdt.core
-1668475187.index
-2380175872.index
-1642175237.index
-2803456261.index
