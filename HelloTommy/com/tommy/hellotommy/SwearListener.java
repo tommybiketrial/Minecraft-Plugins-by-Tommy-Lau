@@ -19,6 +19,9 @@ public class SwearListener implements Listener {
         	
         	TNTPrimed tnt = (TNTPrimed)p.getWorld().spawnEntity(p.getLocation(), EntityType.PRIMED_TNT);
 			tnt.setFuseTicks(0);
+			
+			//DEBUG 
+			p.sendMessage("Still hear me?");
         	
         }else if(event.getMessage().contains("cunt")) {
         	p.sendMessage(p.getName() + " don't swear u cunt.");
