@@ -1,0 +1,24 @@
+package com.tommy.helloworld;
+
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+
+//Driver Program
+public class Main extends JavaPlugin {
+	
+	@Override
+	public void onEnable() {
+		getLogger().info("HELLO WORLD!!!!! TOMMY");
+		PluginManager pm = getServer().getPluginManager();
+		MyFirstListener listener = new MyFirstListener(this);
+		
+		pm.registerEvents(listener, this);
+		
+	}
+	
+	@Override
+	public void onDisable() {
+		getLogger().info("BYE BYE WORLD!");
+	}
+}

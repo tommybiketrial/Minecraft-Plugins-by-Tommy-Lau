@@ -1,0 +1,12 @@
+package com.tommy.hellotommy;
+
+import org.bukkit.event.Listener;
+
+public class SwearListener implements Listener {
+	
+	@EventHandler
+	public void onSwear() {
+		//PlayerChatEvent
+	}
+	
+}

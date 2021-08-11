@@ -1,0 +1,22 @@
+package com.tommy.hellotommy;
+
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
+
+public class SwearListener implements Listener {
+	@EventHandler
+    public void onPlayerChat(AsyncPlayerChatEvent event)
+    {
+        Player p = event.getPlayer();
+        
+        
+        if(event.getMessage().contains("fuck")) {
+        	p.sendMessage("Don't fucking swear please.");
+        }else if(event.getMessage().contains("cunt")) {
+        	p.sendMessage("Don't swear u cunt.");
+        }
+        
+    }
+}

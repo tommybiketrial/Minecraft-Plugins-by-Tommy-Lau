@@ -1,0 +1,8 @@
+name: HelloWorld
+main: com.tommy.helloworld.Main
+version: 1.16
+author: TommyTechie
+commands:
+  explode:
+    description: Explodes
+    usage: /explode

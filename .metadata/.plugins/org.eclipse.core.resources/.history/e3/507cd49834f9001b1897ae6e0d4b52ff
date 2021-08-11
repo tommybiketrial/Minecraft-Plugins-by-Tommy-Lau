@@ -1,0 +1,14 @@
+package com.tommy.helloworld;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Main extends JavaPlugin {
+	
+	@Override
+	public void onEnable() {
+		getLogger().info("HELLO WORLD!!!!! TOMMY");
+	}
+	public void onDisable() {
+		getLogger().info("BYE BYE WORLD!");
+	}
+}
