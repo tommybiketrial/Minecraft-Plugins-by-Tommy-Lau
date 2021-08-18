@@ -17,7 +17,7 @@ public class OnCommandControl implements TabExecutor {
 		if(command.getName().equalsIgnoreCase("NetherOverworldCalculator")||label.equalsIgnoreCase("noc")) {
 			Player player = (Player)sender;
 			
-			if(args.length == 1) {
+			if(args.length < 2) {
 				try {
 					if(args[0].equalsIgnoreCase("auto")) {
 					    int InputX = (int)player.getLocation().getX();
