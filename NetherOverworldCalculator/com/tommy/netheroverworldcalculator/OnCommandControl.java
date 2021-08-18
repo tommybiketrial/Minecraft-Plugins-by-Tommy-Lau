@@ -17,7 +17,7 @@ public class OnCommandControl implements TabExecutor {
 		if(command.getName().equalsIgnoreCase("NetherOverworldCalculator")||label.equalsIgnoreCase("noc")) {
 			Player player = (Player)sender;
 			
-			if(args.length < 2) {
+			if(args.length == 1) {
 				try {
 					if(args[0].equalsIgnoreCase("auto")) {
 					    int InputX = (int)player.getLocation().getX();
@@ -39,9 +39,12 @@ public class OnCommandControl implements TabExecutor {
 					    	player.sendMessage("X: " + String.valueOf(InputX) + "  Y: " + String.valueOf(InputY) + "  Z: " + String.valueOf(InputZ));
 					    	return true;
 					    }
+					}else {
+						player.sendMessage(ChatColor.RED + "Don't enter any other things other than AUTO|Nether|Overworld, and your X Z coordinates.");
+						return false;
 					}
 				}catch(ArrayIndexOutOfBoundsException f) {
-					player.sendMessage(ChatColor.RED + "Don't enter any other things other than the dimension you are currently in, and your X Z coordinates.");
+					player.sendMessage(ChatColor.RED + "Don't enter any other things other than AUTO|Nether|Overworld, and your X Z coordinates.");
 					return false;
 				}
 					
@@ -58,7 +61,10 @@ public class OnCommandControl implements TabExecutor {
 				InputX = Integer.parseInt(args[1]);
 				InputZ = Integer.parseInt(args[2]);
 			}catch(NumberFormatException f){
-				player.sendMessage(ChatColor.RED + "Don't enter any other things other than the dimension you are currently in, and your X Z coordinates.");
+				player.sendMessage(ChatColor.RED + "Don't enter any other things other than AUTO|Nether|Overworld, and your X Z coordinates.");
+				return false;
+			}catch(ArrayIndexOutOfBoundsException f) {
+				player.sendMessage(ChatColor.RED + "Don't enter any other things other than AUTO|Nether|Overworld, and your X Z coordinates.");
 				return false;
 			}
 			if(Dimension.equalsIgnoreCase("overworld")) {
@@ -70,7 +76,7 @@ public class OnCommandControl implements TabExecutor {
 				InputZ = InputZ * 8;
 			}
 			else {
-				player.sendMessage(ChatColor.RED + "Don't enter any other things other than the dimension you are currently in, and your X Z coordinates.");
+				player.sendMessage(ChatColor.RED + "Don't enter any other things other than AUTO|Nether|Overworld, and your X Z coordinates.");
 				return false;
 			}
 			
@@ -87,22 +93,22 @@ public class OnCommandControl implements TabExecutor {
 	
 	@Override
 	public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args){
-		Player player = (Player)sender;
-		if(cmd.getName().equalsIgnoreCase("NetherOverworldCalculator")||alias.equalsIgnoreCase("noc")) {
-			if(args.length < 1) {
-				player.sendMessage("DEBUG");
-				List<String> Hints = new ArrayList<String>();
-				//Hints = Arrays.asList("AUTO","Nether","OverWorld");
-				Hints.add("AUTO");
-				Hints.add("Nether");
-				Hints.add("OverWorld");
-				return Hints;
-			}else if(args.length >= 1) {
-				List<String> Hints = new ArrayList<String>();
-				Hints = Arrays.asList("");
-				return Hints;
-			}
+		//Player player = (Player)sender;
+		
+		if(args.length < 2) {
+			//player.sendMessage("DEBUG");
+			List<String> Hints = new ArrayList<String>();
+			Hints = Arrays.asList("AUTO","Nether","OverWorld");
+			//Hints.add("AUTO");
+			//Hints.add("Nether");
+			//Hints.add("OverWorld");
+			return Hints;
+		}else if(args.length >= 2) {
+			List<String> Hints = new ArrayList<String>();
+			Hints = Arrays.asList("");
+			return Hints;
 		}
+		
 		
 		
 		return null;
