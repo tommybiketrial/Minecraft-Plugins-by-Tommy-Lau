@@ -21,7 +21,7 @@ public class Main extends JavaPlugin {
 		if(command.getName().equalsIgnoreCase("explode")) {
 			Player player = (Player)sender;
 			
-			player.sendMessage(player.getName() + "BOOOOOOM!!");
+			player.sendMessage(player.getName() + " BOOM!!");
 			
 			TNTPrimed tnt = (TNTPrimed)player.getWorld().spawnEntity(player.getLocation(), EntityType.PRIMED_TNT);
 			tnt.setFuseTicks(0);

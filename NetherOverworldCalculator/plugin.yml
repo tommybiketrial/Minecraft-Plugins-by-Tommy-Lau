@@ -1,0 +1,9 @@
+name: NetherOverworldCalculator
+main: com.tommy.netheroverworldcalculator.Main
+version: 1.16
+author: TommyTechie
+commands:
+  NetherOverworldCalculator:
+    description: NetherOverworldCalculator
+    usage: /<command> [AUTO|Nether|Overworld] [X Coord] [Z Coord]
+    aliases: noc
