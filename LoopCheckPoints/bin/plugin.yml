@@ -1,0 +1,9 @@
+name: LoopCheckPoints
+main: com.tommy.loopcheckpoints.Main
+version: 1.16
+author: TommyTechie
+commands:
+  LoopCheckPoints:
+    description: LoopCheckPoints
+    usage: /<command>
+    aliases: lcp

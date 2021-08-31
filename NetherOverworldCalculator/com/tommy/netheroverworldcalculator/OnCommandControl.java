@@ -54,7 +54,7 @@ public class OnCommandControl implements TabExecutor {
 			//	return false;
 			//}
 			
-			String Dimension = args[0];
+			String Dimension = args[0]; //USER INPUT WHICH DIMENSION TO CALCULATE
 			int InputX;
 			int InputZ;
 			try {
